@@ -1,0 +1,41 @@
+<div class="imgbackground"></div>
+	<h2 class="deadline-header" align="center">
+			<%= ((@deadline - Time.now)/60*0.000694444).round(2) %> days<br> until the fat lady sings
+	</h2>
+	<div class="container-fluid center-splash">
+		<div class="row">
+			<div class="col">
+
+				<div class="container goals">
+					<% @goals.each{|goal| %>
+						<div class="row">
+							<% if goal.done == true %>
+
+								<div class="col-sm-0">
+									<br>
+						    		<%= link_to image_tag("/img/checked.png", border: 0, width:'55px'), goals_set_done_to_false_path(:controller => "goals", :action => "set_done_to_false", :goal => goal.id) %>
+								</div>
+								<div class="col goal-text" style="padding-top: 15px;padding-bottom: 15px; font-size:33px; max-width:555px;">
+									<%= goal.title %>
+									<%= simple_format(goal.description, class: 'description-text') %>
+								</div>
+
+							<% else %>
+
+								<div class="col-sm-0">
+									<br>
+						    		<%= link_to image_tag("/img/unchecked.png", border: 0, width:'50px'), goals_set_done_to_true_path(:controller => "goals", :action => "set_done_to_true", :goal => goal.id) %>
+								</div>
+								<div class="col goal-text" style="padding-top: 15px;padding-bottom: 15px; font-size:33px; max-width:555px;">
+									<%= goal.title %>
+									<%= simple_format(goal.description, class: 'description-text') %>
+								</div>
+
+							<% end %>
+						</div>
+					<% } %>
+				</div>
+				
+			</div>
+		</div>
+	</div>

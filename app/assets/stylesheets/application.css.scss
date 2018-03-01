@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+.imgbackground {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), asset-data-url("rack.jpg");
+
+    background-position: center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+}
+
+.center-splash {
+	margin:auto;
+	padding:22px;
+	border-style:groove;
+	width:666px;
+	min-height:555px;
+	background-color:lightgreen;
+}
+
+.goals {
+	/* position: relative; */
+  	/* top: 50%; */
+  	/* transform: translateY(-50%); */
+}
+
+.goal-text {
+	font-family: 'Permanent Marker', cursive;
+}
+
+.description-text{
+	font-family: 'Amatic SC', cursive;
+	font-size: 22px;
+}
+
+.deadline-header {
+	font-family: 'Permanent Marker', cursive;
+	align:center;
+	font-size: 44px;
+
+}
